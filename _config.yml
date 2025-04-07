@@ -1,0 +1,17 @@
+title: Docs
+description: Documentation for various things
+theme: just-the-docs
+
+url: https://ntse.github.io/mobile
+
+aux_links:
+  Template Repository: https://ntse.github.io/mobile
+
+defaults:
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "default"
+
+search_enabled: true
