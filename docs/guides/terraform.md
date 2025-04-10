@@ -55,3 +55,9 @@ Terraform state files can contain secrets and sensitive data. Protect them accor
 
 This ensures you can recover from accidental deletions and keep sensitive infrastructure data safe.
 
+## Repo Organisation - FAQ
+
+### How should I organise my Terraform stacks?
+There’s no one-size-fits-all approach to organising Terraform stacks. The goal is to strike a balance between reducing blast radius and keeping tightly coupled resources in the same stack to allow Terraform to manage dependencies more effectively.
+
+In general, try to group related infrastructure (e.g. networking, compute, storage) into standalone stacks, isolate application deployments into their own stacks (e.g. frontend, backend) unless they are very tightly coupled and avoid creating overly granular stacks that add complexity without meaningful isolation benefits.
