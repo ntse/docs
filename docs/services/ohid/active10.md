@@ -9,6 +9,7 @@ parent: OHID
 # Active10
 
 Active10 is a mobile app used to anonymously record every minute of walking that a user does by tracking their steps. The mobile app connects to the API which consists of a loadbalancer, an ECS cluster and an RDS database cluster.
+
 ---
 
 ## Architecture Overview
