@@ -26,7 +26,7 @@ To connect to a Postgres database running in AWS, follow the steps below.
 1. Authenticate with AWS
    Make sure you're authenticated using your own AWS CLI credentials.
 
-   If needed, refer to [aws-vault setup](./aws-vault.md) for secure credential management.
+   If needed, refer to [aws vault guide] for secure credential management.
 
 2. Ensure Postgres is not running locally
 
@@ -123,3 +123,7 @@ Invalid length for parameter InstanceId, value: 4, valid min length: 10
 ```
 
 Ensure that you have a bastion server in the account that you're connecting to that follows the naming pattern `aw-${PROJECT}-*-ec2-bastion`
+
+---
+
+[aws vault guide]: {% link docs/guides/aws-vault.md %}

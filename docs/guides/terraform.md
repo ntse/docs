@@ -5,7 +5,7 @@ parent: Guides
 
 # Terraform Guidance
 
-Terraform code should follow the standard [code guidance](./code.md) in addition to the below principals.
+Terraform code should follow the standard [code guidance] in addition to the below principals.
 
 ### Repo Organization
 As a general rule, we avoid monolithic Terraform state files. Break infrastructure into logical units and define each in its own _stack_ with its own state file.
@@ -64,3 +64,7 @@ This ensures you can recover from accidental deletions and keep sensitive infras
 There’s no one-size-fits-all approach to organising Terraform stacks. The goal is to strike a balance between reducing blast radius and keeping tightly coupled resources in the same stack to allow Terraform to manage dependencies more effectively.
 
 In general, try to group related infrastructure (e.g. networking, compute, storage) into standalone stacks, isolate application deployments into their own stacks (e.g. frontend, backend) unless they are very tightly coupled and avoid creating overly granular stacks that add complexity without meaningful isolation benefits.
+
+---
+
+[code guidance]: {% link docs/guides/code.md %}

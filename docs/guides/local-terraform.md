@@ -9,7 +9,7 @@ To work on Terraform locally, you can either use actual AWS resources or run aga
 
 ### Running Locally with Real AWS
 
-Install Terrarunt and [aws-vault](https://github.com/99designs/aws-vault). For help configuring aws-vault, see the [aws-vault guide](./guides/aws-vault.md).
+Install Terrarunt and [aws-vault](https://github.com/99designs/aws-vault). For help configuring aws-vault, see the [aws-vault guide].
 
 ```bash
 pip install git+https://github.com/ntse/terrarunt.git
@@ -45,3 +45,7 @@ Override the Terraform binary used by Terrarunt (--terraform-bin=tflocal) and ru
 terrarunt --terraform-bin=tflocal --env=<dev> bootstrap
 terrarunt --terraform-bin=tflocal --env=<dev> apply-all
 ```
+
+---
+
+[aws vault guide]: {% link docs/guides/aws-vault.md %}
