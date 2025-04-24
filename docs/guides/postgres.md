@@ -122,4 +122,4 @@ Parameter validation failed:
 Invalid length for parameter InstanceId, value: 4, valid min length: 10
 ```
 
-Ensure that you have a bastion server in the account that you're connecting to that follows the naming pattern `aw-${PROJECT}-*-ec2-bastion` 
+Ensure that you have a bastion server in the account that you're connecting to that follows the naming pattern `aw-${PROJECT}-*-ec2-bastion`
