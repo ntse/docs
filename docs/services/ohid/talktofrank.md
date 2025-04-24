@@ -3,7 +3,7 @@ title: Talk to Frank
 parent: OHID
 ---
 
-> :warning: *Migration underway!*
+:warning: *Migration underway!*
 > This application is currently being migrated to the new pipeline (as of 24 April 2025). The production environment is still using the old AWS account, so not all information below will apply until the migration is complete.
 
 # Talk to Frank
@@ -56,9 +56,9 @@ graph TD;
 
 The domain is registered with a third-party DNS registrar. The talktofrank.com domain is delegated to a Route 53 zone in AWS. This zone then delegates to the other accounts
 
-preview.talktofrank.com – TalktoFrank Dev
-staging.talktofrank.com – TalktoFrank UAT
-talktofrank.com – TalktoFrank Production
+- preview.talktofrank.com – TalktoFrank Dev
+- staging.talktofrank.com – TalktoFrank UAT
+- talktofrank.com – TalktoFrank Production
 
 ```mermaid
 graph TD;

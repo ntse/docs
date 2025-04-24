@@ -3,7 +3,7 @@ title: Smoke Free Days
 parent: OHID
 ---
 
-> :warning: *Migration underway!*
+:warning: *Migration underway!*
 > This application is currently being migrated to the new pipeline (as of 24 April 2025). The production environment is still using the old AWS account, so not all information below will apply until the migration is complete.
 
 # Smoke Free Days
@@ -26,9 +26,9 @@ graph TD;
 
 The domain is registered in the phe-prd AWS account. The authoritative name servers (NS) are managed via a Route 53 hosted zone in that account. Subdomains are delegated as follows:
 
-smokefreedays-dev.phedigital.co.uk – SFD Dev
-smokefreedays-staging.phedigital.co.uk – SFD Staging
-smokefreedays-prod.phedigital.co.uk – SFD Production
+- smokefreedays-dev.phedigital.co.uk – SFD Dev
+- smokefreedays-staging.phedigital.co.uk – SFD Staging
+- smokefreedays-prod.phedigital.co.uk – SFD Production
 
 ```mermaid
 graph TD;
