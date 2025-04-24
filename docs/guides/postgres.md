@@ -7,9 +7,9 @@ parent: Guides
 
 ## Provisioning
 
-To provision Postgres databases, I currently connect to the database instance manually using the [port forwarding script](./scripts/port_forward.sh). This creates a tunnel, allowing local access to the instance via `localhost:5432`.
+To provision Postgres databases, I currently connect to the database instance manually using the [port forwarding script](../../scripts/port_forward.sh). This creates a tunnel, allowing local access to the instance via `localhost:5432`.
 
-Once connected, I manually create the database and run the [Postgres bootstrap script](./scripts/postgres_bootstrap.py). This script grants all users full permissions on the database. While it works for initial setup, it's overly permissive. Long term, we should grant least privilege permissions tailored to each user and define users and permissions in code to improve reproducibility and auditability.
+Once connected, I manually create the database and run the [Postgres bootstrap script](../../scripts/postgres_bootstrap.py). This script grants all users full permissions on the database. While it works for initial setup, it's overly permissive. Long term, we should grant least privilege permissions tailored to each user and define users and permissions in code to improve reproducibility and auditability.
 
 ## Port Forwarding
 

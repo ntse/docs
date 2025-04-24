@@ -3,6 +3,9 @@ title: Talk to Frank
 parent: OHID
 ---
 
+> :warning: *Migration underway!*
+> This application is currently being migrated to the new pipeline (as of 24 April 2025). The production environment is still using the old AWS account, so not all information below will apply until the migration is complete.
+
 # Talk to Frank
 
 Talk to Frank is a public-facing website offering drug advice for children and adults. It is deployed on AWS using ECS, behind a CloudFront distribution and an ALB, which routes traffic to ECS containers.
@@ -13,8 +16,16 @@ The site integrates with AWS OpenSearch (formerly Elasticsearch) to power its dr
 
 ## Architecture Overview
 
-- **CloudFront** → **Application Load Balancer (ALB)** → **ECS (Fargate)** → **AWS OpenSearch**
+```mermaid
+graph TD;
+    User[User Request]
+    CloudFront[CloudFront]
+    ALB[Application Load Balancer]
+    ECS[ECS Fargate Task]
+    OpenSearch[AWS OpenSearch]
 
+    User --> CloudFront --> ALB --> ECS --> OpenSearch
+```
 ---
 
 ## Components
@@ -40,3 +51,25 @@ The site integrates with AWS OpenSearch (formerly Elasticsearch) to power its dr
 | **Preview**     | https://preview.talktofrank.com   | First environment for testing new code |
 
 ---
+
+## DNS Overview
+
+The domain is registered with a third-party DNS registrar. The talktofrank.com domain is delegated to a Route 53 zone in AWS. This zone then delegates to the other accounts
+
+preview.talktofrank.com – TalktoFrank Dev
+staging.talktofrank.com – TalktoFrank UAT
+talktofrank.com – TalktoFrank Production
+
+```mermaid
+graph TD;
+    DEV[preview.talktofrank.com<br>dev account]
+    UAT[staging.talktofrank.com<br>uat account]
+    PRD[talktofrank.com<br>prd account]
+
+    PRD --> DEV
+    PRD --> UAT
+```
+
+Each environment (account) manages its own hosted zone via Terraform.
+
+If zones are recreated for any reason, the corresponding NS records must be updated in the phe-root account to point to the new name servers of the environment-specific hosted zone.

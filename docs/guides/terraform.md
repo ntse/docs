@@ -46,6 +46,9 @@ Refer to our guides for setup instructions:
 - [AWS Backend Guide](https://github.com/ukhsa-collaboration/devops-terraform-modules/blob/main/terraform-modules/aws/state-file/USAGE.MD)
 - [Azure Backend Guide](https://github.com/ukhsa-collaboration/devops-terraform-modules/blob/main/terraform-modules/azure/state-file/USAGE.md)
 
+### Set variable values once
+The values of your variables should only be set once to avoid confusion. E.g. don't set the same variables in `environments/dev.tfvars` and `core-services/network/tfvars/dev.tfvars` as it's not immediately obvious which value actually has an effect.
+
 ### Secure your state file
 Terraform state files can contain secrets and sensitive data. Protect them accordingly:
 

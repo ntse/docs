@@ -9,6 +9,20 @@ UTI Diary is a web application designed to help users track urinary tract infect
 
 ---
 
+## Architecture Overview
+
+```mermaid
+graph TD;
+    User[User Request]
+    CloudFront[CloudFront]
+    ALB[Application Load Balancer]
+    ECS[ECS Fargate Task]
+    OpenSearch[AWS OpenSearch]
+
+    User --> CloudFront --> ALB --> ECS --> OpenSearch
+```
+---
+
 ## Components
 
 ### Frontend
@@ -37,3 +51,22 @@ UTI Diary is a web application designed to help users track urinary tract infect
 | **Development**     | https://dev.utidiary.com   | First environment new code is deployed to when it is merged to main  |
 
 ---
+
+## DNS Overview
+
+The domain is registered in the phe-prd AWS account. The name servers are assigned to the UTI Diary production account. Each account manages its own zone through Terraform.
+
+dev.utidiary.com – UTI Diary Dev
+uat.utidiary.com – UTI Diary UAT
+utidiary.com – UTI Diary Production
+
+```mermaid
+graph TD;
+    DEV[dev.utidiary.com<br>dev account]
+    UAT[uat.utidiary.com<br>uat account]
+    PRD[utidiary.com<br>prd account]
+
+    PRD --> DEV
+    PRD --> UAT
+```
+

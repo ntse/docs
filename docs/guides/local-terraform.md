@@ -9,7 +9,7 @@ To work on Terraform locally, you can either use actual AWS resources or run aga
 
 ### Running Locally with Real AWS
 
-Install Terrarunt and [aws-vault](https://github.com/99designs/aws-vault). For help configuring aws-vault, see the [aws-vault guide](./guides/useful-tools.md).
+Install Terrarunt and [aws-vault](https://github.com/99designs/aws-vault). For help configuring aws-vault, see the [aws-vault guide](./guides/aws-vault.md).
 
 ```bash
 pip install git+https://github.com/ntse/terrarunt.git

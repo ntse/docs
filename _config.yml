@@ -2,10 +2,10 @@ title: Docs
 description: Documentation for various things
 theme: just-the-docs
 
-url: https://ntse.github.io/mobile
+url: https://ntse.github.io/docs
 
 aux_links:
-  Template Repository: https://ntse.github.io/mobile
+  Template Repository: https://ntse.github.io/docs
 
 defaults:
   - scope:
@@ -15,3 +15,6 @@ defaults:
       layout: "default"
 
 search_enabled: true
+
+mermaid:
+  version: "11.6.0"
