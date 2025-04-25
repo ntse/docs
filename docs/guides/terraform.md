@@ -13,10 +13,13 @@ As a general rule, we avoid monolithic Terraform state files. Break infrastructu
 This modular approach improves maintainability, makes changes easier to test and review, and avoids reduces the blast radius of mistakes and bugs.
 
 ### Naming conventions
-
 Follow [HashiCorp’s naming conventions](https://developer.hashicorp.com/terraform/plugin/best-practices/naming).
 
 Avoid using naming styles from other languages, such as `camelCase` or `PascalCase`. Keep all variable names, inputs, and outputs lowercase with underscores for consistency.
+
+### Don't use HEREDOC for IAM Policies
+Both the `jsonencode` function and `aws_iam_policy_document` resource offer syntax highlighting, policy checks and better validation than heredocs (e.g. <<<EOF).
+
 
 ### Use positive variable names to avoid double negatives
 To reduce confusion and ambiguity, avoid double negatives in variable names. Use names that express intent clearly. For example: `encryption_enabled`, not `disable_encryption`.
